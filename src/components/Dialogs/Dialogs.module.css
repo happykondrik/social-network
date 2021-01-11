@@ -1,0 +1,44 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+
+}
+
+.dialogsItems {
+    padding: 10px;
+    color: #777d74;
+    text-decoration: none;
+}
+
+.active a {
+    color: blue;
+}
+
+.dialog a {
+    color: #777d74;
+    text-decoration: none;
+}
+
+.messages {
+    padding: 10px;
+}
+
+.messages .message {
+    /*margin: 5px 0px 5px 0px;*/
+    /*color: white;*/
+    /*border: 0px solid #777d74;*/
+    /*padding: 10px 10px 10px 10px;*/
+    /*border-radius: 20px 20px 20px 20px;*/
+    /*background-color: #50b5ff;*/
+    position: relative;
+    float: left;
+    text-align: left;
+    padding: .75rem 1rem;
+    margin: 0 .8rem .8rem .3rem;
+    clear: both;
+    word-break: break-word;
+    color: white;
+    background: #50b5ff;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px 0 rgb(80, 181, 255);
+}

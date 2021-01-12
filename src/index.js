@@ -3,13 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-ReactDOM.render(
-    <React.StrictMode>
-        <App/>
-    </React.StrictMode>,
-    document.getElementById('root')
-);
+import Dialogs from "./components/Dialogs/Dialogs";
 
 let dialogs = [
     {id: 1, name: 'Aleksey'},
@@ -48,10 +42,12 @@ let posts = [
     {id: 4, message: 'I\'m fine.', likesCount: 33}
 ]
 
-export {dialogs};
-export {messages};
-export {posts};
-
+ReactDOM.render(
+    <React.StrictMode>
+        <App posts={posts} dialogs={dialogs} messages={messages}/>
+    </React.StrictMode>,
+    document.getElementById('root')
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

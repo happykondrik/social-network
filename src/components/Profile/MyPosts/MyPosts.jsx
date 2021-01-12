@@ -1,12 +1,11 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post'
-import {posts} from "../../../index";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
 
-    let postsElements = posts
-        .map(post => <Post message={post.message} likesCount={post.likesCount}/>);
+    let postsElements =
+        props.posts.map(post => <Post message={post.message} likesCount={post.likesCount}/>);
 
     return (
         <div className={classes.postsBlock}>

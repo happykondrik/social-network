@@ -3,48 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Dialogs from "./components/Dialogs/Dialogs";
+import state from './redux/state'
 
-let dialogs = [
-    {id: 1, name: 'Aleksey'},
-    {id: 2, name: 'Andrey'},
-    {id: 3, name: 'Yuliya'},
-    {id: 4, name: 'Pavel'},
-    {id: 5, name: 'Ryslana'},
-    {id: 6, name: 'Andrey'},
-    {id: 7, name: 'Victoriya'},
-    {id: 8, name: 'Dariya'},
-]
 
-let messages = [
-    {id: 1, message: 'Hi'},
-    {id: 2, message: 'How are you?'},
-    {id: 3, message: 'I\'m fine. And you?'},
-    {id: 4, message: 'I\'m fine.'}
-]
-
-let posts = [
-    {id: 1, message: 'Hi, how are you?', likesCount: 15},
-    {id: 2, message: 'It\'s my first post', likesCount: 7},
-    {id: 3, message: 'I\'m fine. And you?', likesCount: 25},
-    {id: 4, message: 'I\'m fine.', likesCount: 33},
-    {id: 1, message: 'Hi, how are you?', likesCount: 15},
-    {id: 2, message: 'It\'s my first post', likesCount: 7},
-    {id: 3, message: 'I\'m fine. And you?', likesCount: 25},
-    {id: 4, message: 'I\'m fine.', likesCount: 33},
-    {id: 1, message: 'Hi, how are you?', likesCount: 15},
-    {id: 2, message: 'It\'s my first post', likesCount: 7},
-    {id: 3, message: 'I\'m fine. And you?', likesCount: 25},
-    {id: 4, message: 'I\'m fine.', likesCount: 33},
-    {id: 1, message: 'Hi, how are you?', likesCount: 15},
-    {id: 2, message: 'It\'s my first post', likesCount: 7},
-    {id: 3, message: 'I\'m fine. And you?', likesCount: 25},
-    {id: 4, message: 'I\'m fine.', likesCount: 33}
-]
 
 ReactDOM.render(
     <React.StrictMode>
-        <App posts={posts} dialogs={dialogs} messages={messages}/>
+        <App state={state}/>
     </React.StrictMode>,
     document.getElementById('root')
 );

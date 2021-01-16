@@ -5,18 +5,18 @@ let state = {
             {id: 2, message: 'It\'s my first post', likesCount: 7},
             {id: 3, message: 'I\'m fine. And you?', likesCount: 25},
             {id: 4, message: 'I\'m fine.', likesCount: 33},
-            {id: 1, message: 'Hi, how are you?', likesCount: 15},
-            {id: 2, message: 'It\'s my first post', likesCount: 7},
-            {id: 3, message: 'I\'m fine. And you?', likesCount: 25},
-            {id: 4, message: 'I\'m fine.', likesCount: 33},
-            {id: 1, message: 'Hi, how are you?', likesCount: 15},
-            {id: 2, message: 'It\'s my first post', likesCount: 7},
-            {id: 3, message: 'I\'m fine. And you?', likesCount: 25},
-            {id: 4, message: 'I\'m fine.', likesCount: 33},
-            {id: 1, message: 'Hi, how are you?', likesCount: 15},
-            {id: 2, message: 'It\'s my first post', likesCount: 7},
-            {id: 3, message: 'I\'m fine. And you?', likesCount: 25},
-            {id: 4, message: 'I\'m fine.', likesCount: 33}
+            {id: 5, message: 'Hi, how are you?', likesCount: 15},
+            {id: 6, message: 'It\'s my first post', likesCount: 7},
+            {id: 7, message: 'I\'m fine. And you?', likesCount: 25},
+            {id: 8, message: 'I\'m fine.', likesCount: 33},
+            {id: 9, message: 'Hi, how are you?', likesCount: 15},
+            {id: 10, message: 'It\'s my first post', likesCount: 7},
+            {id: 11, message: 'I\'m fine. And you?', likesCount: 25},
+            {id: 12, message: 'I\'m fine.', likesCount: 33},
+            {id: 13, message: 'Hi, how are you?', likesCount: 15},
+            {id: 14, message: 'It\'s my first post', likesCount: 7},
+            {id: 15, message: 'I\'m fine. And you?', likesCount: 25},
+            {id: 16, message: 'I\'m fine.', likesCount: 33}
         ]
     },
     dialogsPage: {
@@ -37,6 +37,16 @@ let state = {
             {id: 4, message: 'I\'m fine.'}
         ]
     }
+}
+
+export let addPost = (postMessage)=> {
+    let newPost = {
+        id: 17,
+        message: postMessage,
+        likesCount: 0
+    };
+
+    state.profilePage.posts.push(newPost);
 }
 
 export default state;

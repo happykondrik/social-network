@@ -1,5 +1,10 @@
 .sidebar {
-    ggrid-area: s;
+    grid-area: s;
     background-color: transparent;
     padding: 20px;
+}
+
+.friendsItem img {
+    height: 50px;
+    width: 50px;
 }

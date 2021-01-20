@@ -38,10 +38,12 @@ let state = {
             {id: 2, message: 'How are you?'},
             {id: 3, message: 'I\'m fine. And you?'},
             {id: 4, message: 'I\'m fine.'}
-        ]
+        ],
+        // newMessageText: 'I am new message text'
     }
 }
 
+//MyPosts.jsx
 export let addPost = () => {
     let newPost = {
         id: 17,
@@ -59,6 +61,7 @@ export let updateNewPostText = (newText) => {
     rerenderEntireTree(state);
 }
 
+//Dialogs.jsx
 export let addMessage = (messageMessage) => {
     let newMessage = {
         id: 5,

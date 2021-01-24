@@ -39,9 +39,10 @@ let state = {
             {id: 3, message: 'I\'m fine. And you?'},
             {id: 4, message: 'I\'m fine.'}
         ],
-        // newMessageText: 'I am new message text'
+        newMessageText: 'I am new message text'
     }
 }
+
 
 //MyPosts.jsx
 export let addPost = () => {
@@ -62,12 +63,20 @@ export let updateNewPostText = (newText) => {
 }
 
 //Dialogs.jsx
-export let addMessage = (messageMessage) => {
+export let addMessage = () => {
     let newMessage = {
         id: 5,
-        message: 'ok, everything worked out'
+        message: state.dialogsPage.newMessageText
     };
+
     state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.newMessageText = '';
+    rerenderEntireTree(state);
+}
+
+export let updateNewMessageText = (newText) => {
+    state.dialogsPage.newMessageText = newText;
+    rerenderEntireTree(state);
 }
 
 export default state;

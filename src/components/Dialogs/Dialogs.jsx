@@ -14,12 +14,10 @@ const Dialogs = (props) => {
     let newMessageElement = React.createRef();
 
     let addMessage = () => {
-        debugger;
         props.addMessage();
     }
 
     let onMessageChange = () => {
-        debugger;
         let text = newMessageElement.current.value;
         props.updateNewMessageText(text);
     }

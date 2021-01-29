@@ -6,7 +6,7 @@ const ProfileInfo = () => {
     return (
         <div>
             <div className={classes.backgroundBlock}>
-                <img src='https://engageemployee.com/wp-content/uploads/2016/09/Data2-1.jpg'/>
+                <img src='./../../../img/profile-bg1.jpg'/>
             </div>
             <div className={classes.descriptionBlock}>
                 ava + discription

@@ -1,90 +1,86 @@
-let rerenderEntireTree = () => {
-    console.log('State changed');
-}
-
-let state = {
-    profilePage: {
-        posts: [
-            {id: 1, message: 'Hi, how are you?', likesCount: 15},
-            {id: 2, message: 'It\'s my first post', likesCount: 7},
-            {id: 3, message: 'I\'m fine. And you?', likesCount: 25},
-            {id: 4, message: 'I\'m fine.', likesCount: 33},
-            {id: 5, message: 'Hi, how are you?', likesCount: 15},
-            {id: 6, message: 'It\'s my first post', likesCount: 7},
-            {id: 7, message: 'I\'m fine. And you?', likesCount: 25},
-            {id: 8, message: 'I\'m fine.', likesCount: 33},
-            {id: 9, message: 'Hi, how are you?', likesCount: 15},
-            {id: 10, message: 'It\'s my first post', likesCount: 7},
-            {id: 11, message: 'I\'m fine. And you?', likesCount: 25},
-            {id: 12, message: 'I\'m fine.', likesCount: 33},
-            {id: 13, message: 'Hi, how are you?', likesCount: 15},
-            {id: 14, message: 'It\'s my first post', likesCount: 7},
-            {id: 15, message: 'I\'m fine. And you?', likesCount: 25},
-            {id: 16, message: 'I\'m fine.', likesCount: 33}
-        ],
-        newPostText: 'it-kamasutra.com'
+let store = {
+    _state: {
+        profilePage: {
+            posts: [
+                {id: 1, message: 'Hi, how are you?', likesCount: 15},
+                {id: 2, message: 'It\'s my first post', likesCount: 7},
+                {id: 3, message: 'I\'m fine. And you?', likesCount: 25},
+                {id: 4, message: 'I\'m fine.', likesCount: 33},
+                {id: 5, message: 'Hi, how are you?', likesCount: 15},
+                {id: 6, message: 'It\'s my first post', likesCount: 7},
+                {id: 7, message: 'I\'m fine. And you?', likesCount: 25},
+                {id: 8, message: 'I\'m fine.', likesCount: 33},
+                {id: 9, message: 'Hi, how are you?', likesCount: 15},
+                {id: 10, message: 'It\'s my first post', likesCount: 7},
+                {id: 11, message: 'I\'m fine. And you?', likesCount: 25},
+                {id: 12, message: 'I\'m fine.', likesCount: 33},
+                {id: 13, message: 'Hi, how are you?', likesCount: 15},
+                {id: 14, message: 'It\'s my first post', likesCount: 7},
+                {id: 15, message: 'I\'m fine. And you?', likesCount: 25},
+                {id: 16, message: 'I\'m fine.', likesCount: 33}
+            ],
+            newPostText: 'it-kamasutra.com'
+        },
+        dialogsPage: {
+            dialogs: [
+                {id: 1, name: 'Aleksey'},
+                {id: 2, name: 'Andrey'},
+                {id: 3, name: 'Yuliya'},
+                {id: 4, name: 'Pavel'},
+                {id: 5, name: 'Ryslana'},
+                {id: 6, name: 'Andrey'},
+                {id: 7, name: 'Victoriya'},
+                {id: 8, name: 'Dariya'},
+            ],
+            messages: [
+                {id: 1, message: 'Hi'},
+                {id: 2, message: 'How are you?'},
+                {id: 3, message: 'I\'m fine. And you?'},
+                {id: 4, message: 'I\'m fine.'}
+            ],
+            newMessageText: 'I am new message text'
+        }
     },
-    dialogsPage: {
-        dialogs: [
-            {id: 1, name: 'Aleksey'},
-            {id: 2, name: 'Andrey'},
-            {id: 3, name: 'Yuliya'},
-            {id: 4, name: 'Pavel'},
-            {id: 5, name: 'Ryslana'},
-            {id: 6, name: 'Andrey'},
-            {id: 7, name: 'Victoriya'},
-            {id: 8, name: 'Dariya'},
-        ],
-        messages: [
-            {id: 1, message: 'Hi'},
-            {id: 2, message: 'How are you?'},
-            {id: 3, message: 'I\'m fine. And you?'},
-            {id: 4, message: 'I\'m fine.'}
-        ],
-        newMessageText: 'I am new message text'
+    getState() {
+        return this._state;
+    },
+    _callSubscriber () {
+        console.log('State changed');
+    },
+    addPost () {
+        let newPost = {
+            id: 17,
+            message: this._state.profilePage.newPostText,
+            likesCount: 0
+        };
+
+        this._state.profilePage.posts.push(newPost);
+        this._state.profilePage.newPostText = '';
+        this._callSubscriber(this._state);
+    },
+    updateNewPostText (newText) {
+        this._state.profilePage.newPostText = newText;
+        this._callSubscriber(this._state);
+    },
+    addMessage () {
+        let newMessage = {
+            id: 5,
+            message: this._state.dialogsPage.newMessageText
+        };
+
+        this._state.dialogsPage.messages.push(newMessage);
+        this._state.dialogsPage.newMessageText = '';
+        this._callSubscriber(this._state);
+    },
+    updateNewMessageText (newText) {
+        this._state.dialogsPage.newMessageText = newText;
+        this._callSubscriber(this._state);
+    },
+    subscribe (observer) {
+        this._callSubscriber = observer; //наблюдатель, это паттерн
     }
 }
 
-window.state = state;
+export default store;
 
-//MyPosts.jsx
-export const addPost = () => {
-    let newPost = {
-        id: 17,
-        message: state.profilePage.newPostText,
-        likesCount: 0
-    };
-
-    state.profilePage.posts.push(newPost);
-    state.profilePage.newPostText = '';
-    rerenderEntireTree(state);
-}
-
-export const updateNewPostText = (newText) => {
-    state.profilePage.newPostText = newText;
-    rerenderEntireTree(state);
-}
-
-//Dialogs.jsx
-export const addMessage = () => {
-    let newMessage = {
-        id: 5,
-        message: state.dialogsPage.newMessageText
-    };
-
-    state.dialogsPage.messages.push(newMessage);
-    state.dialogsPage.newMessageText = '';
-    rerenderEntireTree(state);
-}
-
-export const updateNewMessageText = (newText) => {
-    state.dialogsPage.newMessageText = newText;
-    rerenderEntireTree(state);
-}
-
-
-export const subscribe = (observer) => {
-    rerenderEntireTree = observer; //наблюдатель, это паттерн
-}
-
-export default state;
+window.state = store;

@@ -24,18 +24,18 @@ let store = {
                 {id: 15, message: 'I\'m fine. And you?', likesCount: 25},
                 {id: 16, message: 'I\'m fine.', likesCount: 33}
             ],
-            newPostText: 'it-kamasutra.com'
+            newPostText: ""
         },
         dialogsPage: {
             dialogs: [
-                {id: 1, name: 'Aleksey'},
-                {id: 2, name: 'Andrey'},
-                {id: 3, name: 'Yuliya'},
-                {id: 4, name: 'Pavel'},
-                {id: 5, name: 'Ryslana'},
-                {id: 6, name: 'Andrey'},
-                {id: 7, name: 'Victoriya'},
-                {id: 8, name: 'Dariya'},
+                {id: 1, name: 'Алексей'},
+                {id: 2, name: 'Андрей'},
+                {id: 3, name: 'Юлия'},
+                {id: 4, name: 'Павел'},
+                {id: 5, name: 'Руслана'},
+                {id: 6, name: 'Андрей'},
+                {id: 7, name: 'Виктория'},
+                {id: 8, name: 'Дарья'},
             ],
             messages: [
                 {id: 1, message: 'Hi'},
@@ -43,7 +43,7 @@ let store = {
                 {id: 3, message: 'I\'m fine. And you?'},
                 {id: 4, message: 'I\'m fine.'}
             ],
-            newMessageText: 'I am new message text'
+            newMessageText: ""
         }
     },
     _callSubscriber() {

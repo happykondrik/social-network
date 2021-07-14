@@ -5,3 +5,25 @@
 .posts {
     margin-top: 10px ;
 }
+
+.postsBlock button{
+    background: #50b5ff;
+    border-color: #007bff;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: .5rem!important;
+    color: #fff;
+    /*background-color: #007bff;*/
+
+
+}
+.postsBlock textarea {
+    width:100%;
+    height: 45px;
+    line-height: 45px;
+    background: #00000000;
+    border: 1px solid #f1f1f1;
+    font-size: 14px;
+    color: #a09e9e;
+    border-radius: 10px
+}

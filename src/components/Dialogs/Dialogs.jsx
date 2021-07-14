@@ -12,7 +12,6 @@ const Dialogs = (props) => {
     let messagesElements = state.messages.map(message => <Message message={message.message}/>);
     let newMessageText = state.newMessageText;
 
-//
     let newMessageElement = React.createRef();
 
     let addMessage = () => {
@@ -23,7 +22,6 @@ const Dialogs = (props) => {
         let text = e.target.value;
         props.updateNewMessageTextActionCreator(text);
     }
-
 
     return (
         <div className={classes.dialogs}>
